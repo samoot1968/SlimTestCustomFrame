@@ -5,7 +5,7 @@ namespace App\Controllers;
 use Interop\Container\ContainerInterface;
 
 
-class TestController
+class HomeViewController
 {
 
 	protected $c;

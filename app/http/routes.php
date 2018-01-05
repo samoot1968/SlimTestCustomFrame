@@ -1,9 +1,9 @@
 <?php 
 
 
-use App\Controllers\TestController;
+use App\Controllers\HomeViewController;
 
-$app->get('/', TestController::class .':test');
+$app->get('/', HomeViewController::class .':test');
 
 
  ?>
