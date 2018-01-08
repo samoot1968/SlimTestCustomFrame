@@ -3,7 +3,24 @@
 
 use App\Controllers\HomeViewController;
 
-$app->get('/', HomeViewController::class .':test');
+$customRoutesTest = array();
+$customRoutesTest['base_url'] = 'localhost/slim/';
+
+
+
+
+$app->get('/', HomeViewController::class .':test')->setName('DashBoard');
+
+$app->get('/profile', function(){
+	echo "Profile";
+})->setName('Profile');
+
+$app->get('/Test', function(){
+	echo "Test";
+})->setName('Test');
+
+
+
 
 
  ?>
