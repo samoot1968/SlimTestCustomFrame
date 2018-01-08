@@ -4,6 +4,8 @@
 namespace App\Containers;
 
 use Slim\Views\TwigExtension as TwigExtension;
+use Slim\PDO;
+
 
 class ViewContainer
 {

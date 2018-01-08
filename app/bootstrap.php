@@ -1,7 +1,7 @@
 <?php 
 
 use App\Containers\ViewContainer;
-
+use App\Containers\PDOContainer;
 
 
 
@@ -15,6 +15,8 @@ $app = new \Slim\App([
 ]);
 
 
+$db = new PDOContainer($app);
+$db->db();
 
 $view = new ViewContainer($app);
 $view->ViewContainer();
