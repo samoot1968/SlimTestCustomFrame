@@ -1,7 +1,6 @@
 <?php 
 
 namespace App\Containers;
-
 use PDO;
 
 class PDOContainer
@@ -21,7 +20,7 @@ class PDOContainer
 
 		$container['db'] = function(){
 
-			return new PDO('mysql:host=localhost;dbname=slim','roots','Toomas1968');
+			return new PDO('mysql:host=localhost;dbname=slim','root','');
 
 		};
 		

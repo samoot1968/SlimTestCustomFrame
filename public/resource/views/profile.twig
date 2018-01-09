@@ -1,0 +1,15 @@
+{% extends "layouts/app.twig" %}
+
+{% block content %}
+
+<h1 class="mt5">
+	Users
+</h1>
+
+
+{% for data in users %}
+	<p>
+		<li> {{ data.name }} </li>
+	</p>
+{% endfor %}
+{% endblock %}	

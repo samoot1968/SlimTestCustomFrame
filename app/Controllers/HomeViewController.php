@@ -3,17 +3,20 @@
 namespace App\Controllers;
 
 use Interop\Container\ContainerInterface;
-use PDO;
+use Illuminate\Database\Query\Builder;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
+use App\Models\Users;
 
 class HomeViewController
 {
 
 	protected $c;
 
-
 	public function __construct(ContainerInterface $c)
 	{
 		$this->c = $c;
+
 
 	}
 
@@ -23,14 +26,19 @@ class HomeViewController
 		return $this->c->view->render($response, 'home.twig');
 	}
 
-	public function getSomeInformation($request, $response)
-	{
-		$users = $this->c->db->query("SELECT * FROM test")->fetchAll(PDO::FETCH_OBJ);
+	
 
-		var_dump($users);
+	public function getSomeInformation($request, $response, $args)
+	{
+		
+
+		$users = $this->c->db->table('test')->get();
+		return $this->c->view->render($response, 'profile.twig', ['users' => $users]);
+
 	}
 
 
 
 }
+
  ?>
