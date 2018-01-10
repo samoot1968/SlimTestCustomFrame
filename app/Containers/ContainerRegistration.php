@@ -1,5 +1,6 @@
 <?php 
 
+
 namespace App\Containers;
 
 use App\Containers\ViewContainer;
@@ -30,11 +31,5 @@ class ContainerRegistration
 	}
 
 
-}
-
-
-
- ?>
-
-
-
+} 
+?>

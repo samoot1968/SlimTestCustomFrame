@@ -8,7 +8,6 @@ require 'vendor/autoload.php';
 $app = new \Slim\App([
 	'settings' => [
 		'displayErrorDetails' => true,
-        'addContentLengthHeader' => false,
 		'db' => [
             'driver' => 'mysql',
             'host' => 'localhost',
@@ -21,8 +20,6 @@ $app = new \Slim\App([
         ]
 	]
 ]);
-
-
 
 
 $instatiateContainer = new ContainerRegistration;
