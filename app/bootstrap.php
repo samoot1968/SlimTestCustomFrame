@@ -1,9 +1,6 @@
 <?php 
 
-use App\Containers\ViewContainer;
-use App\Containers\PDOContainer;
-use App\Containers\EloquentContainer;
-use App\JSONFormatter\JSONFormatter;
+use App\Containers\ContainerRegistration;
 
 require 'vendor/autoload.php';
 
@@ -11,6 +8,7 @@ require 'vendor/autoload.php';
 $app = new \Slim\App([
 	'settings' => [
 		'displayErrorDetails' => true,
+        'addContentLengthHeader' => false,
 		'db' => [
             'driver' => 'mysql',
             'host' => 'localhost',
@@ -25,16 +23,10 @@ $app = new \Slim\App([
 ]);
 
 
-//$db = new PDOContainer($app);
-//$db->db();
-
-$db = new EloquentContainer($app);
-$db->Eloquent();
 
 
-$view = new ViewContainer($app);
-$view->ViewContainer();
-
+$instatiateContainer = new ContainerRegistration;
+$instatiateContainer->instatiate($app);
 
 require_once 'app/http/routes.php';
 
