@@ -2,32 +2,17 @@
 
 namespace App\Controllers;
 
-use Interop\Container\ContainerInterface;
-use Illuminate\Database\Query\Builder;
-use App\Models\Users;
 
-class HomeViewController
+
+class HomeViewController extends Controller
 {
-
-
-	protected $c;
-
-
-
-	public function __construct(ContainerInterface $c)
-	{
-		$this->c = $c;
-	}
-
-
 
 
 	public function HomeView($request, $response)
 	{
-		return $this->c->view->render($response, 'home.twig');
+		return $this->view->render($response, 'home.twig');
 	}
 
-	
 
 
 

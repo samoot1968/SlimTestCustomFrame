@@ -7,20 +7,18 @@ namespace App\Containers;
 class EloquentContainer
 {
 
-	public $c;
+	public $app;
 
-	public function __construct($c)
+	public function __construct($app)
 	{
-		$this->c = $c;
+		$this->app = $app;
 	}
-
-
 
 
 	public function Eloquent()
 	{
 		
-		$container = $this->c->getContainer();
+		$container = $this->app->getContainer();
 		$container['db'] = function($container)
 		{
 
