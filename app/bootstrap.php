@@ -4,8 +4,9 @@ use App\Containers\ContainerRegistration;
 
 require 'vendor/autoload.php';
 
+$configuration = require 'config.php';
 
-$app = new \Slim\App(require 'config.php');
+$app = new \Slim\App($configuration);
 
 
 $instatiateContainer = new ContainerRegistration;

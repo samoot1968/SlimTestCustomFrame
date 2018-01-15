@@ -7,8 +7,9 @@ use App\Controllers\Auth\AuthController;
 
 $app->get('/', HomeViewController::class .':HomeView')->setName('DashBoard');
 
-$app->get('/registration', AuthController::class .':getSignUp')->setName('Register');
-$app->post('/registration', AuthController::class .':postSignUp');
+$app->get('/registration', AuthController::class .':getSignUp');
+
+$app->post('/registration', AuthController::class .':postSignUp')->setName('Register');
 
 
 
