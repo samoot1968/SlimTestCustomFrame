@@ -5,7 +5,7 @@ namespace App\Containers;
 
 use App\Containers\ViewContainer;
 use App\Containers\EloquentContainer;
-
+use App\Containers\ValidatorContainer;
 
 class ContainerRegistration
 {
@@ -23,6 +23,9 @@ class ContainerRegistration
 		$view = new ViewContainer($app);
 		$view->ViewContainer();
 
+
+		$validator = new ValidatorContainer;
+		$validator->validator();
 	}
 
 
