@@ -24,7 +24,7 @@ class ContainerRegistration
 		$view->ViewContainer();
 
 
-		$validator = new ValidatorContainer;
+		$validator = new ValidatorContainer($app);
 		$validator->validator();
 	}
 

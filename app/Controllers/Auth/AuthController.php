@@ -24,6 +24,11 @@ class AuthController extends Controller
 			'password' => v::noWhitespace()->notEmpty()
 		]);
 
+		if($validation->failed())
+		{
+			return $response->withRedirect($this->router->pathFor('Register'));
+		}
+
 		$user = User::create([
 			'name' => $request->getParam('name'),
 			'email' => $request->getParam('email'),
