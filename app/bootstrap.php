@@ -19,7 +19,7 @@ $instatiateContainer->instatiate($app);
 
 
 
-//Routes file for adding routes
+//Routes file for adding routes.
 require_once 'app/http/routes.php';
 
 
