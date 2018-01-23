@@ -1,7 +1,7 @@
 <?php 
 
 namespace App\Controllers;
-
+use App\Models\User;
 
 
 class HomeViewController extends Controller
@@ -10,7 +10,9 @@ class HomeViewController extends Controller
 
 	public function HomeView($request, $response)
 	{
-		return $this->view->render($response, 'home.twig');
+		
+		$users = User::all();
+		return $this->view->render($response, 'home.twig', ['users' => $users]);
 	}
 
 
